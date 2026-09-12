@@ -19,7 +19,7 @@ export default function Navbar({ user, onLogout }) {
             onClick={onLogout}
             className="flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/80 hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/30 transition-all cursor-pointer"
           >
-            <LogOut className="w-4 h-4" /> Disconnect
+            <LogOut className="w-4 h-4" /> LogOut
           </button>
         )}
       </div>

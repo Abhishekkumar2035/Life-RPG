@@ -130,7 +130,7 @@ export default function App() {
       <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
           <h2 className="text-2xl font-black text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
-            LIFE RPG TERMINAL
+            LIFE RPG
           </h2>
           <p className="text-xs text-center text-slate-400 mt-1 mb-6">
             Enter the portal to track your progression
@@ -175,7 +175,7 @@ export default function App() {
             </div>
             <div>
               <label className="text-xs font-semibold text-slate-400">
-                Passcode
+                Password
               </label>
               <input
                 type="password"
@@ -192,9 +192,7 @@ export default function App() {
               type="submit"
               className="w-full py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 font-bold text-sm rounded-xl transition-all shadow-lg shadow-cyan-500/20 cursor-pointer"
             >
-              {authMode === "login"
-                ? "Initialize Session"
-                : "Register Operator"}
+              {authMode === "login" ? "Login" : "Create Account"}
             </button>
           </form>
 
@@ -207,7 +205,7 @@ export default function App() {
               className="text-xs text-cyan-400 hover:underline"
             >
               {authMode === "login"
-                ? "Don't have an operator? Sign up"
+                ? "Don't have an account? Sign up"
                 : "Already registered? Login"}
             </button>
           </div>
