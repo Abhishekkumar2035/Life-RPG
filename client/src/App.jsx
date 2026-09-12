@@ -9,7 +9,9 @@ import LevelUpModal from "./components/LevelUpModal";
 import ShopModal from "./components/ShopModal";
 import { Plus, ShoppingBag } from "lucide-react";
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE =
+  import.meta.env.VITE_API_BASE ||
+  "https://life-rpg-backend-zuxd.onrender.com/api";
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
