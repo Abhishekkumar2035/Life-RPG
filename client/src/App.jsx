@@ -89,11 +89,19 @@ export default function App() {
       );
 
       setQuests((prev) => prev.map((q) => (q._id === id ? res.data.task : q)));
-      setUser(res.data.user);
 
-      if (res.data.leveledUp) {
+      const updatedUser = res.data.user;
+      setUser(updatedUser);
+
+      // Backend flag ya 100% XP cross hone par modal trigger
+      const currentXP = updatedUser?.currentXP || updatedUser?.xp || 0;
+      const maxXP = updatedUser?.maxXP || 519;
+      const hasReachedLevelUp =
+        Boolean(res.data.leveledUp) || currentXP >= maxXP;
+
+      if (hasReachedLevelUp) {
         setShowLevelModal(true);
-        confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
+        confetti({ particleCount: 160, spread: 100, origin: { y: 0.6 } });
       }
     } catch (err) {
       console.error(err);
